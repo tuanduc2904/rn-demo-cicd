@@ -74,7 +74,7 @@ jobs:
       #       mv fastlane/report.xml test-results/fastlane
 
       - run:
-          command: fastlane deploy
+          command: bundle exec fastlane deploy
           working_directory: android
 
       - store_test_results:
@@ -156,6 +156,6 @@ workflows:
       - android:
           requires:
             - node
-      - ios:
-          requires:
-            - node
+      # - ios:
+      #     requires:
+      #       - node
