@@ -79,11 +79,11 @@ jobs:
       - run:
           name: fastlane playstore
           command:  bundle exec fastlane playstore
-      - store_test_results:
-          path: test-results
+      # - store_test_results:
+      #     path: test-results
 
       - store_artifacts:
-          path: test-results
+          path: android/app/build/outputs/apk/release/app-release.apk
 
   ios:
     macos:
