@@ -155,7 +155,7 @@ workflows:
       - node
       - android:
           requires:
-            - node
+            - build_and_push
       # - ios:
       #     requires:
       #       - node
