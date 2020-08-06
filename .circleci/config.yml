@@ -78,10 +78,7 @@ jobs:
           
       - run:
           name: fastlane playstore
-          command: |
-            mkdir -p test-results/fastlane
-            bundle exec fastlane playstore
-            mv fastlane/report.xml test-results/fastlane
+          command:  bundle exec fastlane playstore
       - store_test_results:
           path: test-results
 
