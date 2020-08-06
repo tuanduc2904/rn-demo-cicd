@@ -72,14 +72,14 @@ jobs:
       #       mkdir -p test-results/fastlane
       #       bundle exec fastlane test
       #       mv fastlane/report.xml test-results/fastlane
-       - run:
-          name: Fastlane
-          command: bundle update fastlane
-
+      
       - run:
-          command: bundle exec fastlane deploy
-          working_directory: android
-
+          name: fastlane playstore
+          command: |
+            mkdir -p test-results/fastlane
+            bundle exec fastlane test
+            mv fastlane/report.xml test-results/fastlane
+            
       - store_test_results:
           path: test-results
 
