@@ -74,7 +74,7 @@ jobs:
       #       mv fastlane/report.xml test-results/fastlane
        - run:
           name: Fastlane
-          command: bundle exec fastlane $FASTLANE_LANE
+          command: bundle update fastlane
 
       - run:
           command: bundle exec fastlane deploy
