@@ -48,8 +48,7 @@ jobs:
   android:
     working_directory: ~/demo-react-native/android
     docker:
-      - image: circleci/android:api-30-ndk
-
+      - image: circleci/android:api-29-ndk
     steps:
       - checkout:
           path: ~/demo-react-native
@@ -73,7 +72,7 @@ jobs:
       #       mkdir -p test-results/fastlane
       #       bundle exec fastlane test
       #       mv fastlane/report.xml test-results/fastlane
-     - run:
+      - run:
           name: chmod permissions
           command: chmod +x ./gradlew
       - run:
@@ -82,7 +81,6 @@ jobs:
             mkdir -p test-results/fastlane
             bundle exec fastlane test
             mv fastlane/report.xml test-results/fastlane
-
       - store_test_results:
           path: test-results
 
