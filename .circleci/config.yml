@@ -74,7 +74,7 @@ jobs:
       #       mv fastlane/report.xml test-results/fastlane
 
       - run:
-          command: bundle exec fastlane deploy
+          command: fastlane deploy
           working_directory: android
 
       - store_test_results:
