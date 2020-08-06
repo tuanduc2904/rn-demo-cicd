@@ -16,7 +16,7 @@ jobs:
 
       - run: npm install
       
-      - run: bundle install
+      - run: bundle check || bundle install --path vendor/bundle --clean
       
       - run:
             name: fastlane
