@@ -73,7 +73,9 @@ jobs:
       #       mkdir -p test-results/fastlane
       #       bundle exec fastlane test
       #       mv fastlane/report.xml test-results/fastlane
-      
+     - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
       - run:
           name: fastlane playstore
           command: |
