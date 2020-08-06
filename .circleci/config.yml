@@ -82,8 +82,6 @@ jobs:
       # - store_test_results:
       #     path: test-results
 
-      - store_artifacts:
-          path: android/app/build/outputs/apk/release/app-release.apk
 
   ios:
     macos:
