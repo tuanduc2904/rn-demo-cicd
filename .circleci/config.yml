@@ -15,12 +15,6 @@ jobs:
           key: node-v1-{{ checksum "package.lock.json" }}-{{ arch }}
 
       - run: npm install
-      
-      - run: bundle check || bundle install --path vendor/bundle --clean
-      
-      - run:
-            name: fastlane
-            command: bundle exec fastlane $FASTLANE_LANE
 
       - save_cache:
           key: npm-v1-{{ checksum "package.lock.json" }}-{{ arch }}
