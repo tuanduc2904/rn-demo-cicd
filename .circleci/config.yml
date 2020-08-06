@@ -77,8 +77,8 @@ jobs:
           command: chmod +x ./gradlew
           
       - run:
-          name: fastlane playstore
-          command:  bundle exec fastlane playstore
+          name: fastlane deploy
+          command:  bundle exec fastlane deploy
       # - store_test_results:
       #     path: test-results
 
