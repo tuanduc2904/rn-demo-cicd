@@ -72,6 +72,9 @@ jobs:
       #       mkdir -p test-results/fastlane
       #       bundle exec fastlane test
       #       mv fastlane/report.xml test-results/fastlane
+       - run:
+          name: Fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
 
       - run:
           command: bundle exec fastlane deploy
