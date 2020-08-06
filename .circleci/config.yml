@@ -78,7 +78,7 @@ jobs:
           
       - run:
           name: fastlane playstore
-          command: fastlane playstore
+          command: fastlane android playstore
 
       - store_test_results:
           path: test-results
