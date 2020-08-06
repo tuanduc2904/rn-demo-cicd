@@ -75,6 +75,7 @@ jobs:
       - run:
           name: chmod permissions
           command: chmod +x ./gradlew
+          
       - run:
           name: fastlane playstore
           command: |
