@@ -15,7 +15,6 @@ jobs:
           key: node-v1-{{ checksum "package.lock.json" }}-{{ arch }}
 
       - run: npm install
-      - run: sudo gem install fastlane -NV
       - save_cache:
           key: npm-v1-{{ checksum "package.lock.json" }}-{{ arch }}
           paths:
@@ -33,6 +32,28 @@ jobs:
       #       npm run test
       #     environment:
       #       JEST_JUNIT_OUTPUT: test-results/jest/junit.xml
+    setupFastLane:
+        executor:
+          name: default
+        steps:
+          - checkout
+          - run:
+              name: Select Ruby Version
+              command:  echo "ruby-2.4" > .ruby-version
+          - restore_cache:
+              keys:
+              - m2-gems-{{ checksum "Gemfile.lock" }}
+              - m2-gems-
+          - run:
+              name: Install Ruby Gems
+              command: bundle check || bundle install --path vendor/bundle
+              environment:
+                BUNDLE_JOBS: 4
+                BUNDLE_RETRY: 3
+          - save_cache:
+              key: m2-gems-{{ checksum "Gemfile.lock" }}
+              paths:
+                - vendor/bundle
 
       - persist_to_workspace:
           root: ~/demo-react-native
