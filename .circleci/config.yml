@@ -16,9 +16,9 @@ jobs:
 
       - run: sudo npm install -g react-native-cli
       
-      - run: npm install @react-native-community/cli-platform-android
-      
       - run: npm install
+      
+      - run: npm install @react-native-community/cli-platform-android
 
       - save_cache:
           key: npm-v1-{{ checksum "package.lock.json" }}-{{ arch }}
