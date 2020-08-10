@@ -79,9 +79,9 @@ jobs:
           name: chmod permissions
           command: sudo chmod +x ./gradlew
           
-      # - run:
-      #     name: fastlane deploy
-      #     command:  bundle exec fastlane deploy
+      - run:
+          name: fastlane deploy
+          command:  bundle exec fastlane deploy
       # - store_test_results:
       #     path: test-results
       - store_artifacts:
