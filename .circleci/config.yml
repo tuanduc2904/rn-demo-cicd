@@ -14,12 +14,9 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.lock.json" }}-{{ arch }}
 
-      - run: 
-        name: Install command line tools
-        command: |
-          npm install -g react-native-version
-          npm install -g react-native-cli
-          npm install -g bugsnag-sourcemaps
+      - run: npm install -g react-native-cli
+
+      - run: npm install -g react-native-cli
 
       - run: npm install
 
