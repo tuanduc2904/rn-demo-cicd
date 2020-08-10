@@ -14,9 +14,7 @@ jobs:
       - restore_cache:
           key: node-v1-{{ checksum "package.lock.json" }}-{{ arch }}
 
-      - run: npm install -g react-native-cli
-
-      - run: npm install -g react-native-cli
+      - run: sudo npm install -g react-native-cli
 
       - run: npm install
 
