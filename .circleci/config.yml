@@ -77,7 +77,7 @@ jobs:
       #       mv fastlane/report.xml test-results/fastlane
       - run:
           name: chmod permissions
-          command: chmod +x ./gradlew
+          command: sudo chmod +x ./gradlew
           
       - run:
           name: fastlane deploy
