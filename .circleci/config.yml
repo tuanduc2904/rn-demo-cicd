@@ -39,11 +39,18 @@ jobs:
           paths:
             - node_modules
 
-      - store_test_results:
-          path: test-results
+      - run: 
+        name: Install command line tools
+        command: |
+          npm install -g react-native-version
+          npm install -g react-native-cli
+          npm install -g bugsnag-sourcemaps
+          
+      # - store_test_results:
+      #     path: test-results
 
-      - store_artifacts:
-          path: test-results
+      # - store_artifacts:
+      #     path: test-results
 
   android:
     working_directory: ~/demo-react-native/android
