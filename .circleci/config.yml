@@ -15,7 +15,9 @@ jobs:
           key: node-v1-{{ checksum "package.lock.json" }}-{{ arch }}
 
       - run: sudo npm install -g react-native-cli
-
+      
+      - run: npm install @react-native-community/cli-platform-android
+      
       - run: npm install
 
       - save_cache:
@@ -68,7 +70,7 @@ jobs:
           key: bundle-v1-{{ checksum "Gemfile.lock" }}-{{ arch }}
           paths:
             - vendor/bundle
-
+      
       # - run:
       #     name: fastlane tests
       #     command: |
