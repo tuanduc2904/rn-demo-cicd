@@ -82,6 +82,17 @@ jobs:
           command: sudo chmod +x ./gradlew
           
       - run:
+          name: Build Android JS Bundle
+          working_directory: android
+          command: |
+            ./gradlew bundleReleaseJsAndAssets
+      - run:
+          name: Build Android APK
+          working_directory: android
+          command: |
+            ./gradlew assembleRelease -x bundleReleaseJsAndAssets 
+
+      - run:
           name: fastlane deploy
           command:  bundle exec fastlane deploy
       # - store_test_results:
